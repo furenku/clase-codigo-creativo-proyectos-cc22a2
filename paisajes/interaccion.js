@@ -3,6 +3,7 @@ function keyPressed() {
 
     if( estado == "FINAL" ) {
 
+        reiniciarPaisaje()
         estado = "INICIO"
 
     } else {
@@ -13,6 +14,7 @@ function keyPressed() {
         if( teclasValidasControl.includes( letraMayuscula ) ) {
             switch( letraMayuscula ) {
                 case "F":
+                    reiniciarPaisaje()
                     estado = "FINAL"
                     break
                 case "P":
@@ -24,23 +26,25 @@ function keyPressed() {
         
         if( teclasValidasDibujo.includes( letraMayuscula ) ) {
             
-            
-            switch( letraMayuscula ) {
-                case "D":
-                    estado = "DIBUJANDO"                    
-                    break
-                case "M":
-                    dibujosSeleccionados.montannas.mostrar = ! dibujosSeleccionados.montannas.mostrar
-                    break
-                case "N":
-                    dibujosSeleccionados.nubes.mostrar = ! dibujosSeleccionados.nubes.mostrar
-                    break
-                case "A":
-                    dibujosSeleccionados.arboles.mostrar = ! dibujosSeleccionados.arboles.mostrar
-                    break
-                case "C":
-                    elegirFondo()
-                    break
+            if( letraMayuscula == "D" ) {
+                estado = "DIBUJANDO"
+            }
+
+            if( estado == "DIBUJANDO" ) {
+                switch( letraMayuscula ) {                
+                    case "M":
+                        dibujosSeleccionados.montannas.mostrar = ! dibujosSeleccionados.montannas.mostrar
+                        break
+                    case "N":
+                        dibujosSeleccionados.nubes.mostrar = ! dibujosSeleccionados.nubes.mostrar
+                        break
+                    case "A":
+                        dibujosSeleccionados.arboles.mostrar = ! dibujosSeleccionados.arboles.mostrar
+                        break
+                    case "C":
+                        elegirFondo()
+                        break
+                }
             }
 
         }

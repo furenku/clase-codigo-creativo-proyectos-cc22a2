@@ -1,3 +1,12 @@
+function reiniciarPaisaje() {
+
+    colorFondo = color(0,0,1)
+
+    Object.values(dibujosSeleccionados).forEach(v=>v.mostrar=false)
+    
+}
+
+
 function crearDibujos() {
 
     let posPrueba = 0
