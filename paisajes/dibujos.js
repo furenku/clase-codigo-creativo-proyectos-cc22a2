@@ -31,11 +31,29 @@ function crearDibujos() {
 }
 
 
+function mostrarInstruccionesDibujos() {
+
+    textSize(20)
+    fill(0,0,0.4)
+    text( instruccionesDibujo, width/2, height/2)
+
+}
 
 function dibujarPaisaje() {
 
     background( colorFondo )
 
-    crearDibujos()
+    const dibujoVacio = Object.entries(dibujosSeleccionados).filter( d => d[1].mostrar ).length == 0
+
+    if( dibujoVacio ) {
+
+        mostrarInstruccionesDibujos()
+
+    } else {
+
+        crearDibujos()
+
+    }
+
 
 }
