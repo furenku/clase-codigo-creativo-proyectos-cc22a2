@@ -2,15 +2,21 @@ function crearDibujos() {
 
     let posPrueba = 0
 
-    for( let dibujo of dibujosSeleccionados ) {
+    const dibujos = Object.entries(dibujosSeleccionados).filter( d => d[1].mostrar )
+
+    dibujos.forEach( function(dibujo) {
         
+        const [ tipo, configuracion ] = dibujo
+
+
         text(
-            `${dibujo.tipo}: ${dibujo.cantidad}` , width/2, height/2 + posPrueba
+            `${tipo}: ${configuracion.cantidad}` , width/2, height/2 + posPrueba
         )
         
         posPrueba+=100
+            
 
-    }
+    })
 
 
 }

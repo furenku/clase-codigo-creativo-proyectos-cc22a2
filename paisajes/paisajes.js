@@ -1,35 +1,27 @@
 let estado = "INICIO"
 
-let teclasValidasDibujo = [ "C", "M", "N", "A" ]
+let teclasValidasDibujo = [ "D", "C", "M", "N", "A" ]
 let teclasValidasControl = [ "P", "F" ]
 
 
-let dibujosSeleccionados = [
-    {
-        tipo: "MONTANNAS",
-        cantidad: 3,
+let dibujosSeleccionados = {
+
+    montannas: {
+        mostrar: false,
+        cantidad: 0
     },
-    {
-        tipo: "NUBES",
-        cantidad: 8,
+
+    nubes: {
+        mostrar: false,
+        cantidad: 0
     },
-    {
-        tipo: "ARBOLES",
-        cantidad: 2,
+
+    arboles: {
+        mostrar: false,
+        cantidad: 0
     },
-    {
-        tipo: "CASAS",
-        cantidad: 4,
-    },
-    {
-        tipo: "AUTOS",
-        cantidad: 12,
-    },
-    {
-        tipo: "AVES",
-        cantidad: 22,
-    },
-]
+
+}
 
 
 let colorFondo
@@ -83,43 +75,3 @@ function draw() {
 
 }
 
-
-function keyPressed() {
-
-    if( estado == "FINAL" ) {
-
-        estado = "INICIO"
-
-    } else {
-        
-        let letraMayuscula = key.toUpperCase()
-
-        // revisar si se presionó tecla válida para control
-        if( teclasValidasControl.includes( letraMayuscula ) ) {
-            switch( letraMayuscula ) {
-                case "F":
-                    estado = "FINAL"
-                    break
-                case "P":
-                    estado = "GUARDAR"
-                    break
-            }        
-        }
-        
-        
-        if( teclasValidasDibujo.includes( letraMayuscula ) ) {
-            
-            estado = "DIBUJANDO"
-
-            switch( letraMayuscula ) {
-                case "M":
-                    break
-                case "C":
-                    elegirFondo()
-                    break
-            }
-
-        }
-    }
-
-}
