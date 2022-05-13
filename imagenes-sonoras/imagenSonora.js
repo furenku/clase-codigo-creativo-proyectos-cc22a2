@@ -22,9 +22,9 @@ function draw() {
   // Get the overall volume (between 0 and 1.0)
   let vol = 0
 
-  if (mic) mic.getLevel();
+  if (mic) vol = mic.getLevel();
 
-  background(0, 0, 1)
+  background(0, 0, vol)
 
   text(floor(vol * 100), width / 2, height / 2)
 
