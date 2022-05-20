@@ -1,10 +1,15 @@
 let mic;
 
+let gestureTypes = [
+  "EXAMPLE_1",
+  "EXAMPLE_2",
+  "EXAMPLE_3",
+]
 
 let exampleImage = [
   
   {
-    type: "EJEMPLO_1",
+    type: "EXAMPLE_1",
     position: {
       x: 0.3,
       y: 0.3,
@@ -13,7 +18,7 @@ let exampleImage = [
   },
 
   {
-    type: "EJEMPLO_2",
+    type: "EXAMPLE_2",
     position: {
       x: 0.6,
       y: 0.6,
@@ -22,12 +27,21 @@ let exampleImage = [
   },
 
   {
-    type: "EJEMPLO_3",
+    type: "EXAMPLE_3",
     position: {
       x: 0.5,
       y: 0.5,
     },
     value: 1
+  },
+
+  {
+    type: "EXAMPLE_3",
+    position: {
+      x: 0.25,
+      y: 0.25,
+    },
+    value: 1/2
   },
 
 ]
@@ -72,8 +86,14 @@ function draw() {
 
   text(floor(vol * 100), 50, 50 )
 
-  
+  noStroke()
+
+  detectAudioEvents()
+
   drawImage()
 
 
 }
+
+
+
