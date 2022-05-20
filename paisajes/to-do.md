@@ -1,0 +1,1 @@
+[ ] - Implementar mecanismo para asociar una imagen con una melodía
