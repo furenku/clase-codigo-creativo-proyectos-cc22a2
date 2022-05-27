@@ -1,3 +1,9 @@
+let demo = true
+let drawVolume = true
+
+let threshold = 0.025
+
+
 let mic;
 
 let gestureTypes = [
@@ -35,15 +41,6 @@ let exampleImage = [
     value: 1
   },
 
-  {
-    type: "EXAMPLE_3",
-    position: {
-      x: 0.25,
-      y: 0.25,
-    },
-    value: 1/2
-  },
-
 ]
 
 
@@ -65,8 +62,12 @@ function setup() {
 
   mic.start();
 
-  // TODO: remove following example assignation:
-  currentImage = exampleImage
+  if( demo ) {
+
+    // TODO: remove following example assignation:
+    currentImage = exampleImage
+    
+  }
 
 }
 
@@ -80,11 +81,28 @@ function draw() {
 
   if (mic) vol = mic.getLevel();
 
+  if( drawVolume ) {
+    
+    rectMode( CORNER, CORNER )
+
+    textSize( 50 )
+    fill( 0 )
+    
+    rect( 0, height-vol*height, 100, vol*height )
+    
+    fill( 0,0.5,0.5 )
+    rect( 100, height-threshold*height, 100, threshold*height )
+    
+    fill( 0,0,1 )
+    text(floor(vol * 100), 50, 50 )
+
+    rectMode( CENTER )
+  }
+
   // background(0, 0, 0.5+vol, 1)
 
-  textSize( 50 )
-
-  text(floor(vol * 100), 50, 50 )
+  
+  
 
   noStroke()
 
