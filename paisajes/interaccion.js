@@ -54,18 +54,21 @@ function keyPressed() {
                         break
                 }
 
-                dibujoSeleccionado = dibujosSeleccionados[ tipo ]
+                if( tipo ) {
 
-                dibujoCantidades = dibujosCantidades[ tipo ]
+                    dibujoSeleccionado = dibujosSeleccionados[ tipo ]
 
+                    const configuracion = dibujosConfiguracion[ tipo ]
+
+
+                    console.log("configuracion", tipo, dibujosConfiguracion, configuracion);
+
+                    dibujoConfigurar( dibujoSeleccionado, configuracion )
+                    
+                    dibujoMostrar( dibujoSeleccionado )
+
+                }
                 
-                const cantidad = ceil( random( dibujoCantidades.minimo, dibujoCantidades.maximo+1 ) )
-
-
-                dibujoConfigurar( dibujoSeleccionado, cantidad )
-                
-                dibujoMostrar( dibujoSeleccionado )
-
             }
 
         }

@@ -4,18 +4,48 @@ let teclasValidasDibujo = [ "D", "C", "M", "N", "A" ]
 let teclasValidasControl = [ "P", "F" ]
 
 
-let dibujosCantidades = {
+let dibujosConfiguracion = {
     montannas: {
         minimo: 4,
         maximo: 12,
+        posicion: {
+            y: {
+                minimo: 0.3,
+                maximo: 0.6,
+            }
+        },
+        elementos: {
+            minimo: 3,
+            maximo: 7,
+        }
     },
     nubes: {
         minimo: 5,
         maximo: 25,
+        posicion: {
+            y: {
+                minimo: 0,
+                maximo: 0.3,
+            }
+        },
+        elementos: {
+            minimo: 5,
+            maximo: 12,
+        }
     },
     arboles: {
         minimo: 20,
         maximo: 50,
+        posicion: {
+            y: {
+                minimo: 0.6,
+                maximo: 1,
+            }
+        },
+        elementos: {
+            minimo: 20,
+            maximo: 50,
+        }
     },
 }
 

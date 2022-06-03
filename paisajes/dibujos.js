@@ -74,19 +74,36 @@ function dibujarPaisaje() {
 
 
 
-function dibujoConfigurar( dibujo, cantidad ) {
+function dibujoConfigurar( dibujo, configuracion ) {
+
+    const cantidad = ceil( random( configuracion.minimo, configuracion.maximo+1 ) )
+    const cantidadElementos = ceil( random( configuracion.elementos.minimo, configuracion.elementos.maximo+1 ) )
+
 
     dibujo.elementosGenerados = []
 
     for( let i=0; i<cantidad; i++ ) {
-
+        
+        const elementos = []
+        
+        for( let j=0; j<cantidadElementos; j++ ) {
+            
+            elementos.push({
+                x: random(),
+                y: random(),
+                ancho: random(),
+                alto: random(),
+            })
+            
+        }
+        
         dibujo.elementosGenerados.push({
             x: random(),
-            y: random(),
+            y: map(random(),0,1,configuracion.posicion.y.minimo,configuracion.posicion.y.maximo),
             ancho: random(),
             alto: random(),
+            elementos
         })
-
     }
 
 }
