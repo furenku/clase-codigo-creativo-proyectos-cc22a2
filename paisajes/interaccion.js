@@ -36,24 +36,29 @@ function keyPressed() {
             if( estado == "DIBUJANDO" ) {
 
                 let dibujoSeleccionado
+                
+                let tipo
 
                 switch( letraMayuscula ) {                
                     case "M":
-                        dibujoSeleccionado = dibujosSeleccionados.montannas                        
+                        tipo = 'montannas'                        
                         break
                     case "N":
-                        dibujoSeleccionado = dibujosSeleccionados.nubes                        
+                        tipo = 'nubes'                        
                         break
                     case "A":
-                        dibujoSeleccionado = dibujosSeleccionados.arboles                        
+                        tipo = 'arboles'                        
                         break
                     case "C":
                         elegirFondo()
                         break
                 }
 
+                dibujoSeleccionado = dibujosSeleccionados[ tipo ]
 
-                dibujoConfigurar( dibujoSeleccionado )
+                const cantidadMaxima = dibujosCantidadesMaximas[ tipo ]
+
+                dibujoConfigurar( dibujoSeleccionado, cantidadMaxima )
                 
                 dibujoMostrar( dibujoSeleccionado )
 
@@ -65,9 +70,9 @@ function keyPressed() {
 }
 
 
-function dibujoConfigurar( dibujo ) {
+function dibujoConfigurar( dibujo, cantidadMaxima ) {
 
-    const cantidad = ceil( random(5) )
+    const cantidad = ceil( random( cantidadMaxima ) )
 
     dibujo.elementosGenerados = []
 

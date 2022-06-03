@@ -4,6 +4,12 @@ let teclasValidasDibujo = [ "D", "C", "M", "N", "A" ]
 let teclasValidasControl = [ "P", "F" ]
 
 
+let dibujosCantidadesMaximas = {
+    montannas: 12,
+    nubes: 25,
+    arboles: 50
+}
+
 let dibujosSeleccionados = {
 
     montannas: {

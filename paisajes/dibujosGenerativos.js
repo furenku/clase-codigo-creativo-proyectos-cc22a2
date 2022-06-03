@@ -8,7 +8,7 @@ const dibujosGenerativos = {
             translate( x*width, y*height )
             
                 triangle(
-                    0, 0, 100, 100, 50, -200
+                    0, 0, 200, 0, 100, -100
                 )
 
         pop()
