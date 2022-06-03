@@ -56,9 +56,13 @@ function keyPressed() {
 
                 dibujoSeleccionado = dibujosSeleccionados[ tipo ]
 
-                const cantidadMaxima = dibujosCantidadesMaximas[ tipo ]
+                dibujoCantidades = dibujosCantidades[ tipo ]
 
-                dibujoConfigurar( dibujoSeleccionado, cantidadMaxima )
+                
+                const cantidad = ceil( random( dibujoCantidades.minimo, dibujoCantidades.maximo+1 ) )
+
+
+                dibujoConfigurar( dibujoSeleccionado, cantidad )
                 
                 dibujoMostrar( dibujoSeleccionado )
 

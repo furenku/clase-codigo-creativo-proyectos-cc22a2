@@ -74,9 +74,7 @@ function dibujarPaisaje() {
 
 
 
-function dibujoConfigurar( dibujo, cantidadMaxima ) {
-
-    const cantidad = ceil( random( cantidadMaxima ) )
+function dibujoConfigurar( dibujo, cantidad ) {
 
     dibujo.elementosGenerados = []
 

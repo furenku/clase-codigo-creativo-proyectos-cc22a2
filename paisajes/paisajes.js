@@ -4,10 +4,19 @@ let teclasValidasDibujo = [ "D", "C", "M", "N", "A" ]
 let teclasValidasControl = [ "P", "F" ]
 
 
-let dibujosCantidadesMaximas = {
-    montannas: 12,
-    nubes: 25,
-    arboles: 50
+let dibujosCantidades = {
+    montannas: {
+        minimo: 4,
+        maximo: 12,
+    },
+    nubes: {
+        minimo: 5,
+        maximo: 25,
+    },
+    arboles: {
+        minimo: 20,
+        maximo: 50,
+    },
 }
 
 let dibujosSeleccionados = {

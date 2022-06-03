@@ -4,9 +4,9 @@ const dibujosGenerativos = {
         const {x,y,ancho,alto} = dibujo        
 
         const xEscalado = x*width
-        const yEscalado = x*height
-        const anchoEscalado = ancho*150
-        const altoEscalado = alto*100
+        const yEscalado = y*height
+        const anchoEscalado = 100 + ancho*150
+        const altoEscalado = 100 + alto*100
 
         push()
 
@@ -25,9 +25,9 @@ const dibujosGenerativos = {
         const {x,y,ancho,alto} = dibujo
 
         const xEscalado = x*width
-        const yEscalado = x*height
-        const anchoEscalado = ancho*200
-        const altoEscalado = alto*100
+        const yEscalado = y*height
+        const anchoEscalado = 100 + ancho*200
+        const altoEscalado = 30 + alto*100
 
         push()
 
@@ -46,9 +46,9 @@ const dibujosGenerativos = {
         const {x,y,ancho,alto} = dibujo
 
         const xEscalado = x*width
-        const yEscalado = x*height
-        const anchoEscalado = ancho*25
-        const altoEscalado = alto*300
+        const yEscalado = y*height
+        const anchoEscalado = 25 + ancho*25
+        const altoEscalado = 100 + alto*300
 
         push()
 
