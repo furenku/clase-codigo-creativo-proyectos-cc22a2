@@ -69,30 +69,3 @@ function keyPressed() {
 
 }
 
-
-function dibujoConfigurar( dibujo, cantidadMaxima ) {
-
-    const cantidad = ceil( random( cantidadMaxima ) )
-
-    dibujo.elementosGenerados = []
-
-    for( let i=0; i<cantidad; i++ ) {
-
-        dibujo.elementosGenerados.push({
-            x: random(),
-            y: random(),
-        })
-
-    }
-
-}
-
-
-
-function dibujoMostrar( dibujo ) {
-
-    dibujo.mostrar = ! dibujo.mostrar
-
-}
-
-

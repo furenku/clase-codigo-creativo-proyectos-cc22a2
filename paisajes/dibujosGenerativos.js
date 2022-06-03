@@ -1,14 +1,19 @@
 const dibujosGenerativos = {
     montannas: function( dibujo ) {
 
-        const {x,y} = dibujo
+        const {x,y,ancho,alto} = dibujo        
+
+        const xEscalado = x*width
+        const yEscalado = x*height
+        const anchoEscalado = ancho*150
+        const altoEscalado = alto*100
 
         push()
 
-            translate( x*width, y*height )
+            translate( xEscalado, yEscalado )
             
                 triangle(
-                    0, 0, 200, 0, 100, -100
+                    -anchoEscalado, 0, anchoEscalado, 0, 0, -altoEscalado
                 )
 
         pop()
@@ -17,14 +22,19 @@ const dibujosGenerativos = {
     
     nubes: function( dibujo ) {
 
-        const {x,y} = dibujo
+        const {x,y,ancho,alto} = dibujo
+
+        const xEscalado = x*width
+        const yEscalado = x*height
+        const anchoEscalado = ancho*200
+        const altoEscalado = alto*100
 
         push()
 
-            translate( x*width, y*height )
+            translate( xEscalado, yEscalado )
             
                 ellipse(
-                    0, 0, 200, 100
+                    -anchoEscalado, 0, anchoEscalado, altoEscalado
                 )
 
         pop()
@@ -33,14 +43,19 @@ const dibujosGenerativos = {
 
     arboles: function( dibujo ) {
 
-        const {x,y} = dibujo
+        const {x,y,ancho,alto} = dibujo
+
+        const xEscalado = x*width
+        const yEscalado = x*height
+        const anchoEscalado = ancho*25
+        const altoEscalado = alto*300
 
         push()
 
-            translate( x*width, y*height )
+            translate( xEscalado, yEscalado )
             
                 rect(
-                    0, 0, 50, 300
+                    -anchoEscalado, 0, anchoEscalado, -altoEscalado
                 )
 
         pop()
@@ -48,3 +63,6 @@ const dibujosGenerativos = {
     },
 
 }
+
+
+
