@@ -17,10 +17,22 @@ function crearDibujos() {
         
         const [ tipo, configuracion ] = dibujo
 
+        const cantidad = configuracion.elementosGenerados.length
 
         text(
-            `${tipo}: ${configuracion.cantidad}` , width/2, height/2 + posPrueba
+            `${tipo}: ${cantidad}` , width/2, height/2 + posPrueba
         )
+
+
+        const drawFunction = dibujosGenerativos[ tipo ]
+        
+        configuracion.elementosGenerados.forEach( function( dibujo ){
+
+            drawFunction( dibujo )
+
+        })
+
+
         
         posPrueba+=100
             

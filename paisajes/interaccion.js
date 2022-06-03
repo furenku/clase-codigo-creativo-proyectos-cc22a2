@@ -34,26 +34,60 @@ function keyPressed() {
             }
 
             if( estado == "DIBUJANDO" ) {
+
+                let dibujoSeleccionado
+
                 switch( letraMayuscula ) {                
                     case "M":
-                        dibujosSeleccionados.montannas.mostrar = ! dibujosSeleccionados.montannas.mostrar
-                        dibujosSeleccionados.montannas.cantidad = ceil( random(5) )
+                        dibujoSeleccionado = dibujosSeleccionados.montannas                        
                         break
                     case "N":
-                        dibujosSeleccionados.nubes.mostrar = ! dibujosSeleccionados.nubes.mostrar
-                        dibujosSeleccionados.nubes.cantidad = ceil( random(5) )
+                        dibujoSeleccionado = dibujosSeleccionados.nubes                        
                         break
                     case "A":
-                        dibujosSeleccionados.arboles.mostrar = ! dibujosSeleccionados.arboles.mostrar
-                        dibujosSeleccionados.arboles.cantidad = ceil( random(5) )
+                        dibujoSeleccionado = dibujosSeleccionados.arboles                        
                         break
                     case "C":
                         elegirFondo()
                         break
                 }
+
+
+                dibujoConfigurar( dibujoSeleccionado )
+                
+                dibujoMostrar( dibujoSeleccionado )
+
             }
 
         }
     }
 
 }
+
+
+function dibujoConfigurar( dibujo ) {
+
+    const cantidad = ceil( random(5) )
+
+    dibujo.elementosGenerados = []
+
+    for( let i=0; i<cantidad; i++ ) {
+
+        dibujo.elementosGenerados.push({
+            x: random(),
+            y: random(),
+        })
+
+    }
+
+}
+
+
+
+function dibujoMostrar( dibujo ) {
+
+    dibujo.mostrar = ! dibujo.mostrar
+
+}
+
+
