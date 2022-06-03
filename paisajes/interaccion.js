@@ -1,6 +1,9 @@
 
 function keyPressed() {
 
+    // mover de aquí:
+    playSound()
+
     if( estado == "FINAL" ) {
 
         reiniciarPaisaje()
@@ -34,12 +37,15 @@ function keyPressed() {
                 switch( letraMayuscula ) {                
                     case "M":
                         dibujosSeleccionados.montannas.mostrar = ! dibujosSeleccionados.montannas.mostrar
+                        dibujosSeleccionados.montannas.cantidad = ceil( random(5) )
                         break
                     case "N":
                         dibujosSeleccionados.nubes.mostrar = ! dibujosSeleccionados.nubes.mostrar
+                        dibujosSeleccionados.nubes.cantidad = ceil( random(5) )
                         break
                     case "A":
                         dibujosSeleccionados.arboles.mostrar = ! dibujosSeleccionados.arboles.mostrar
+                        dibujosSeleccionados.arboles.cantidad = ceil( random(5) )
                         break
                     case "C":
                         elegirFondo()

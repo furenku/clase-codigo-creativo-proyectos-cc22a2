@@ -26,6 +26,8 @@ let dibujosSeleccionados = {
 
 let colorFondo
 
+let synth;
+
 
 function setup() {
     
@@ -36,6 +38,8 @@ function setup() {
     textAlign(CENTER, CENTER)
     
     colorFondo = color(0,0,1)
+
+    synth = new p5.MonoSynth();
 
 }
 
